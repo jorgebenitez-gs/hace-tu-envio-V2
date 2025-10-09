@@ -1,10 +1,14 @@
-import { DataTableDemo } from "./test/page";
+import { auth } from "@/auth"
+import { redirect } from "next/navigation"
 
-export default function Home() {
-  return (
-    <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-      <h1>Es una página de prueba con componentes de shadcn/ui</h1>
-      <DataTableDemo />
-    </div>
-  );
+export default async function Home() {
+  const session = await auth()
+
+  // Si está autenticado, va al dashboard
+  if (session?.user) {
+    redirect("/dashboard")
+  }
+
+  // Si no está autenticado, va al login
+  redirect("/login")
 }
