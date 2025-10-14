@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link" // Asumiendo que usas next/link para navegación
+
 import {
   BadgeCheck,
   Bell,
@@ -7,6 +9,7 @@ import {
   CreditCard,
   LogOut,
   Sparkles,
+  User, // Importamos el ícono de Usuario para Perfil
 } from "lucide-react"
 
 import {
@@ -71,11 +74,11 @@ export function NavUser({
                 <span className="truncate font-medium">{user.name}</span>
                 <span className="truncate text-xs">{user.email}</span>
               </div>
-              <ChevronsUpDown className="ml-auto size-4" />
+              <ChevronsUpDown className="size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
+            className="w-56 rounded-lg"
             side={isMobile ? "bottom" : "right"}
             align="end"
             sideOffset={4}
@@ -96,19 +99,24 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <BadgeCheck />
-                Account
+              
+              {/* Opción de Perfil / Cuenta */}
+              <DropdownMenuItem asChild>
+                <Link href="/profile" className="flex items-center space-x-2">
+                  <User className="mr-2 size-4" />
+                  <span>Perfil / Cuenta</span>
+                </Link>
               </DropdownMenuItem>
+
               <DropdownMenuItem>
-                <Bell />
-                Notifications
+                <Bell className="mr-2 size-4" />
+                Notificaciones
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => handleSignOut()}>
-              <LogOut />
-              Log out
+              <LogOut className="mr-2 size-4" />
+              Cerrar sesión
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
