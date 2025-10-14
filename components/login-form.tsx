@@ -24,16 +24,16 @@ export function LoginForm({
           <div className="p-6 md:p-8">
             <FieldGroup>
               <div className="flex flex-col items-center gap-2 text-center">
-                <h1 className="text-2xl font-bold">Welcome back</h1>
+                <h1 className="text-2xl font-bold">Bienvenido de nuevo</h1>
                 <p className="text-muted-foreground text-balance">
-                  Login to your Acme Inc account
+                  Inicia sesión en tu cuenta de Acme Inc
                 </p>
               </div>
 
               {/* Email */}
               <form>
                 <Field>
-                  <FieldLabel htmlFor="email">Email</FieldLabel>
+                  <FieldLabel htmlFor="email">Correo electrónico</FieldLabel>
                   <Input
                     id="email"
                     type="email"
@@ -45,12 +45,12 @@ export function LoginForm({
                 {/* Password */}
                 <Field>
                   <div className="flex items-center">
-                    <FieldLabel htmlFor="password">Password</FieldLabel>
+                    <FieldLabel htmlFor="password">Contraseña</FieldLabel>
                     <a
                       href="#"
                       className="ml-auto text-sm underline-offset-2 hover:underline"
                     >
-                      Forgot your password?
+                      ¿Olvidaste tu contraseña?
                     </a>
                   </div>
                   <Input id="password" type="password" required />
@@ -58,13 +58,13 @@ export function LoginForm({
 
                 {/* Submit */}
                 <Field>
-                  <Button type="submit">Login</Button>
+                  <Button type="submit">Iniciar Sesión</Button>
                 </Field>
               </form>
 
               {/* Separator */}
               <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
-                Or continue with
+                O continuar con
               </FieldSeparator>
 
               {/* Google Only */}
@@ -81,14 +81,14 @@ export function LoginForm({
                         fill="currentColor"
                       />
                     </svg>
-                    <span>Login with Google</span>
+                    <span>Iniciar sesión con Google</span>
                   </Button>
                 </form>
               </Field>
 
               {/* Register link */}
               <FieldDescription className="text-center">
-                Don&apos;t have an account? <a href="#">Sign up</a>
+                ¿No tienes una cuenta? <a href="#">Regístrate</a>
               </FieldDescription>
             </FieldGroup>
           </div>
@@ -97,7 +97,7 @@ export function LoginForm({
           <div className="bg-muted relative hidden md:block">
             <img
               src="/placeholder.svg"
-              alt="Image"
+              alt="Imagen" // Traducido
               className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
             />
           </div>
@@ -106,8 +106,8 @@ export function LoginForm({
 
       {/* Terms */}
       <FieldDescription className="px-6 text-center">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
+        Al hacer clic en continuar, aceptas nuestros <a href="#">Términos de Servicio</a>{" "}
+        y nuestra <a href="#">Política de Privacidad</a>.
       </FieldDescription>
     </div>
   )
